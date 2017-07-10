@@ -1,0 +1,8 @@
+server {
+  server_name lernnavi.taskbase.com;
+  root /home/ubuntu/lernnavi/fe;
+  location / {
+    try_files $uri $uri.html /index.html;
+  }
+
+}

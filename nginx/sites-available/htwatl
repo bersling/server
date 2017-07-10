@@ -1,0 +1,10 @@
+server {
+  server_name how-to-write-a-typescript-library.com;
+  root /home/ubuntu/how-to-write-a-typescript-library/dist;
+
+  location / {
+    try_files $uri $uri.html $uri/ /index.html;
+  }
+
+}
+

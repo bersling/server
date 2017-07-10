@@ -1,0 +1,8 @@
+server {
+  server_name test.tsmean.com;
+  root /home/ubuntu/tsmeandemo/testfe;
+  location / {
+    try_files $uri $uri.html /index.html;
+  }
+}
+

@@ -1,0 +1,8 @@
+server {
+  server_name notify.tsmean.com;
+  root /home/ubuntu/notify-angular;
+  location / {
+    try_files $uri $uri.html $uri/ /index.html;    
+  }
+}
+

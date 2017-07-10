@@ -1,0 +1,27 @@
+upstream mailchimp {
+    server localhost:46254;
+}
+
+server {
+  listen  80;
+  server_name mailchimp.tsmean.com;
+  return  301 https://$host$request_uri;
+}
+
+server {
+  listen 443 ssl;
+  ssl_certificate /etc/nginx/ssl/nginx.crt;
+  ssl_certificate_key /etc/nginx/ssl/nginx.key;
+  ssl_protocols TLSv1.2 TLSv1.1 TLSv1;
+
+  server_name mailchimp.tsmean.com;
+
+  location ~ /.well-known {
+    root /home/ubuntu/mailchimp;
+    allow all;
+  }
+
+  location / {
+      proxy_pass http://mailchimp;
+  }
+}
