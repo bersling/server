@@ -2,8 +2,13 @@ server {
   server_name how-to-write-a-typescript-library.com;
   root /home/ubuntu/how-to-write-a-typescript-library/dist;
 
+  location /angular2 {
+    return  301 http://www.tsmean.com/how-to-write-a-typescript-library/angular;
+  }
+
   location / {
-    try_files $uri $uri.html $uri/ /index.html;
+    return 301 http://www.tsmean.com/how-to-write-a-typescript-library;
+    # try_files $uri $uri.html $uri/ /index.html;
   }
 
 }
