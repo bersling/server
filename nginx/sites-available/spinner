@@ -1,0 +1,8 @@
+server {
+  server_name spinner.tsmean.com;
+  root /home/ubuntu/spinner-angular;
+  location / {
+    try_files $uri $uri.html $uri/ /index.html;    
+  }
+}
+

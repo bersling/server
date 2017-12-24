@@ -1,0 +1,13 @@
+upstream latex2html {
+    server localhost:46536;
+}
+
+server {
+
+  server_name latex2html.tsmean.com;
+
+  location / {
+      proxy_pass http://latex2html;
+  }
+
+}

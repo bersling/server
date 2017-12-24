@@ -1,7 +1,8 @@
 server {
   server_name  tsmean.com;
-  return       301 http://www.tsmean.com$request_uri;
+  return 301 http://www.tsmean.com$request_uri;
 }
+
 server {
   server_name www.tsmean.com;
   root /home/ubuntu/tsmeanamp/dist;

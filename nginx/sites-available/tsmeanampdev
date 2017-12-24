@@ -1,0 +1,8 @@
+server {
+  server_name dev.tsmean.com;
+  root /home/ubuntu/tsmeanampdev/dist;
+  location / {
+    try_files $uri $uri.html $uri/ /index.html;
+  }
+}
+

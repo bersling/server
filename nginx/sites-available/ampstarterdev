@@ -1,0 +1,8 @@
+server {
+  server_name dev.amp-project-starter.com;
+  root /home/ubuntu/ampstarterdev/dist;
+  location / {
+    try_files $uri $uri.html $uri/ /index.html;
+  }
+}
+

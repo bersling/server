@@ -1,0 +1,13 @@
+upstream ocr {
+    server localhost:8000;
+}
+
+server {
+
+  server_name ocr.tsmean.com;
+
+  location / {
+      proxy_pass http://ocr;
+  }
+
+}
